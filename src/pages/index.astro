@@ -4,14 +4,14 @@ import "../main.css";
 ---
 
 <Layout title="Welcome to Pablos House.">
-	<div style="height: 80vh;" id="vanta">
+	<div style="height: 100vh;" id="vanta">
 		<img
 		src="/Background/bg1.jpg"
 		alt="Placeholder Image"
 		id="placeholder-image"
-		class="absolute -z-50 inset-0 w-full h-screen object-cover"
+		class="absolute -z-50 inset-0 w-full h-full object-cover"
 	  />
-		<video autoplay muted loop id="background-video" class="absolute inset-0 w-full h-full -z-50 object-cover" preload="metadata">
+		<video id="background-video" class="absolute inset-0 w-full h-full -z-50 object-cover" preload="metadata" autoplay loop muted playsinline loop autoplay playsinline="true" disablepictureinpicture="true">
 			<source src="/Background/mov2.webm" type="video/webm"/>
 		</video>
 
