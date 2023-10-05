@@ -1,5 +1,13 @@
 /* Creating a btn component */
 .btn {
-    @apply bg-white text-black text-center uppercase rounded-lg px-8 py-2 mb-4 flex items-center justify-center;
+    @apply text-center uppercase rounded-lg  border-2 px-8 pt-2 mb-4 flex items-center justify-center;
     width: inherit;
+    background-color: #E8C155;
 }
+
+@font-face {
+    font-family: 'California';
+    src: url('/California.ttf') format('opentype');
+    /* Add additional font formats if needed (e.g., woff, woff2, ttf) */
+  }
+  
