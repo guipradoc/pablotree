@@ -4,96 +4,106 @@ import "../main.css";
 ---
 
 <Layout title="Welcome to Pablos House.">
-	<div style="height: 100vh;" id="vanta">
-		<img
-		src="/Background/bg1.jpg"
-		alt="Placeholder Image"
-		id="placeholder-image"
-		class="absolute -z-50 inset-0 w-full h-full object-cover"
-	  />
+  <div style="height: 100vh;" id="vanta">
+    <img
+      src="/Background/bg1.jpg"
+      alt="Placeholder Image"
+      id="placeholder-image"
+      class="absolute -z-50 inset-0 w-full h-full object-cover"
+    />
 
-		<video autoplay loop muted playsinline id="background-video" class="absolute inset-0 w-full h-full -z-50 object-cover" preload="metadata" >
-			<source src="/Background/mov2.webm" type="video/webm"/>
-		</video>
+    <!-- Media Query for Small Screens -->
+    <style>
+      @media screen and (max-width: 768px) {
+        #background-gif {
+          display: block;
+        }
+        #background-video {
+          display: none;
+        }
+      }
+    </style>
 
-		<div class="container mx-auto md:max-w-md py-2 md:py-6 px-4 z-10 ">
-			<!-- Profile pic -->
-			<img
-				class="h-32 text-center mx-auto rounded-full"
-				src="https://pablosmate.co/wp-content/uploads/2021/05/cropped-pablosmate_logo1-1.png"
-				alt="Pablos Mate Profile Picture"
-			/>
-			<!--Name tag-->
-			<div
-				class="mt-4 mx-auto flex items-center justify-center w-fit"
-			>
-			</div>
+    <!-- GIF for Small Screens -->
+    <img
+      src="/public/Background/mov3.gif"
+      alt="Background GIF"
+      id="background-gif"
+      class="absolute inset-0 w-full h-full -z-50 object-cover"
+    />
 
-			<!--Social Links-->
-			<div class="py-4">
-				<!-- Pablos site-->
-				<a href="http://pablosmate.co/" target="_blank" class="btn">
-					<span>Pablo’s World</span>
-				</a>
-				<!-- Twitter -->
-				<a
-					href="https://twitter.com/pescao_pablo"
-					target="_blank"
-					class="btn"
-				>
-					<span>Stay connected</span>
-				</a>
-				<!-- Spotify -->
-				<a
-					href="https://open.spotify.com/playlist/4ITE52x3BRuh6fJH4LL3gu?si=czvbwwUcRl6nwrM7_tB66w&nd=1"
-					target="_blank"
-					class="btn"
-				>
-					<span>Listen to Pablo</span>
-				</a>
-				<!-- Contact -->
-				<a
-					href="mailto:admin@pablosmate.com"
-					target="_blank"
-					class="btn"
-				>
-					<span>Contact us</span>
-				</a>
+    <!-- Video for Larger Screens -->
+    <video autoplay loop muted playsinline id="background-video" class="absolute inset-0 w-full h-full -z-50 object-cover" preload="metadata">
+      <source src="/Background/mov2.webm" type="video/webm"/>
+    </video>
 
-		</div>
-	</div>
+    <div class="container mx-auto md:max-w-md py-2 md:py-6 px-4 z-10 ">
+      <!-- Profile pic -->
+      <img
+        class="h-32 text-center mx-auto rounded-full"
+        src="https://pablosmate.co/wp-content/uploads/2021/05/cropped-pablosmate_logo1-1.png"
+        alt="Pablos Mate Profile Picture"
+      />
+      <!--Name tag-->
+      <div
+        class="mt-4 mx-auto flex items-center justify-center w-fit"
+      >
+      </div>
 
-	<!-- Load Vanta.js -->
+      <!--Social Links-->
+      <div class="py-4">
+        <!-- Pablos site-->
+        <a href="http://pablosmate.co/" target="_blank" class="btn">
+          <span>Pablo’s World</span>
+        </a>
+        <!-- Twitter -->
+        <a
+          href="https://twitter.com/pescao_pablo"
+          target="_blank"
+          class="btn"
+        >
+          <span>Stay connected</span>
+        </a>
+        <!-- Spotify -->
+        <a
+          href="https://open.spotify.com/playlist/4ITE52x3BRuh6fJH4LL3gu?si=czvbwwUcRl6nwrM7_tB66w&nd=1"
+          target="_blank"
+          class="btn"
+        >
+          <span>Listen to Pablo</span>
+        </a>
+        <!-- Contact -->
+        <a
+          href="mailto:admin@pablosmate.com"
+          target="_blank"
+          class="btn"
+        >
+          <span>Contact us</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Vanta.js -->
 
   <style>
-
-    @media screen {
-      #background-video {
-        display: block; 
-        background-color: transparent;
-      }
-      #vanta {
-        background-color: transparent;
-      }
+    body {
+      font-family: 'California', sans-serif;
+      font-size: 32px;
+      letter-spacing: 4px;
+      color: #009B68;
     }
-
-	body {
-        font-family: 'California', sans-serif;
-		font-size: 32px;
-        letter-spacing: 4px;
-		color: #009B68;
-      }
-
   </style>
-   <script>
+  <script>
     // JavaScript to control visibility of the placeholder image
     const video = document.getElementById("background-video");
     const placeholderImage = document.getElementById("placeholder-image");
+    const backgroundGif = document.getElementById("background-gif");
 
     video.addEventListener("loadedmetadata", () => {
-      // Video metadata loaded, hide the placeholder
+      // Video metadata loaded, hide the placeholder and GIF
       placeholderImage.style.display = "none";
+      backgroundGif.style.display = "none";
     });
   </script>
- 
 </Layout>
