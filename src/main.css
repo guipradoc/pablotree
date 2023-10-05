@@ -11,3 +11,6 @@
     /* Add additional font formats if needed (e.g., woff, woff2, ttf) */
   }
   
+  body {
+    background-color: black;
+}
