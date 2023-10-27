@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../main.css";
+import { Analytics } from '@vercel/analytics/react';
 ---
 
 <Layout title="Welcome to Pablos House.">
@@ -106,4 +107,5 @@ import "../main.css";
       backgroundGif.style.display = "none";
     });
   </script>
+   <Analytics />
 </Layout>
